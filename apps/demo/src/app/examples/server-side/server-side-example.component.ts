@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from "@angular/core";
-import { DatatableComponent, DatatableOptions } from "@redsen/mat-datatable";
+import { DatatableComponent, DatatableOptions } from "@acheddir/mat-datatable";
 import { MockDataService } from "../../services/mock-data.service";
 import { User } from "../../models/user.model";
 import { Sort } from "@angular/material/sort";

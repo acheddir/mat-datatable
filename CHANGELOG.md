@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 #### Core Features
+
 - **DatatableComponent**: Main datatable component with full Material Design integration
 - **Dual-Mode Support**: Client-side and server-side data processing modes
 - **Column Filtering**: Per-column filters with support for multiple input types
@@ -30,12 +31,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Column visibility control
 
 #### Components
+
 - **ColumnFilterComponent**: Reusable filter component with automatic type inference
 - **Custom Templates**: Support for custom column and action templates
 - **Row Click Handling**: Callback function for row click events
 - **Loading States**: Built-in loading indicator support
 
 #### Configuration
+
 - **DatatableOptions**: Comprehensive configuration interface
   - Server-side vs client-side mode toggle
   - Header visibility control
@@ -47,11 +50,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Type-Safe API**: Full TypeScript support with generics for compile-time safety
 
 #### Utilities
+
 - **deepClone**: Deep cloning utility for immutable data operations
 - **sortBy**: Multi-field sorting function (ascending only)
 - **orderBy**: Multi-field sorting with direction control (asc/desc)
 
 #### Developer Experience
+
 - **Strict TypeScript**: 100% TypeScript with strict mode enabled
 - **ESLint Configuration**: Strict linting rules with Angular best practices
 - **Prettier Integration**: Automatic code formatting
@@ -66,6 +71,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Technical Details
 
 #### Supported Data Types
+
 - `String`: Text data with case-insensitive filtering
 - `Number`: Numeric data with exact match filtering
 - `Date`: Date values with datepicker filtering
@@ -75,12 +81,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `html`: HTML content
 
 #### Browser Compatibility
+
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
 
 #### Requirements
+
 - Angular 21.x
 - Angular Material 21.x
 - Angular CDK 21.x
@@ -99,7 +107,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Package Information
 
-- **Package Name**: `@redsen/mat-datatable`
+- **Package Name**: `@acheddir/mat-datatable`
 - **Version**: 1.0.0
 - **License**: MIT
 - **Bundle Format**: ESM2022
@@ -155,6 +163,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Future Roadmap
 
 Potential enhancements for future versions:
+
 - Row selection (single/multi)
 - Column reordering (drag & drop)
 - Column visibility toggle
@@ -172,9 +181,10 @@ Potential enhancements for future versions:
 
 ### v1.0.0 - Initial Release
 
-This is the first production-ready release of `@redsen/mat-datatable`, providing a comprehensive, type-safe Angular 21 Material datatable solution for enterprise applications.
+This is the first production-ready release of `@acheddir/mat-datatable`, providing a comprehensive, type-safe Angular 21 Material datatable solution for enterprise applications.
 
 **Highlights:**
+
 - ✅ Dual-mode support (client/server)
 - ✅ Full TypeScript support
 - ✅ Comprehensive filtering
@@ -182,13 +192,14 @@ This is the first production-ready release of `@redsen/mat-datatable`, providing
 - ✅ Production-ready quality (75+ tests, strict linting)
 
 **Installation:**
+
 ```bash
-pnpm add @redsen/mat-datatable
+pnpm add @acheddir/mat-datatable
 ```
 
 **Quick Start:**
-See [README.md](./libs/mat-datatable/README.md) for detailed installation and usage instructions.
+See [README.md](./README.md) for detailed installation and usage instructions.
 
 ---
 
-[1.0.0]: https://pkgs.dev.azure.com/YOUR_ORG/_packaging/YOUR_FEED/npm/package/@redsen/mat-datatable/version/1.0.0
+[1.0.0]: https://github.com/acheddir/mat-datatable/releases/tag/v1.0.0

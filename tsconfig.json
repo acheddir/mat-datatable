@@ -8,8 +8,8 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@redsen/mat-datatable": ["./dist/mat-datatable"],
-      "@redsen/mat-datatable/models": ["./libs/mat-datatable/src/lib/models"]
+      "@acheddir/mat-datatable": ["./dist/mat-datatable"],
+      "@acheddir/mat-datatable/models": ["./libs/mat-datatable/src/lib/models"]
     },
     "skipLibCheck": true,
     "isolatedModules": true,

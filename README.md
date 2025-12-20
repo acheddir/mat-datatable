@@ -17,17 +17,7 @@ A production-ready Angular 21 Material datatable library with built-in support f
 
 ## Installation
 
-### From Azure Artifacts
-
-First, configure your `.npmrc` to authenticate with Azure Artifacts:
-
-```bash
-# Add to your project's .npmrc or global ~/.npmrc
-@acheddir:registry=https://pkgs.dev.azure.com/YOUR_ORG/_packaging/YOUR_FEED/npm/registry/
-always-auth=true
-```
-
-Then install the package:
+### From npm
 
 ```bash
 npm install @acheddir/mat-datatable
@@ -54,7 +44,7 @@ npm install @angular/common@^21.0.0 @angular/core@^21.0.0 \
 ### 1. Define Your Model
 
 ```typescript
-import { Column } from "@redsen/mat-datatable";
+import { Column } from "@acheddir/mat-datatable";
 
 export class User {
   @Column({ display: "ID", propType: "Number", order: 1 })
@@ -78,7 +68,7 @@ export class User {
 
 ```typescript
 import { Component } from "@angular/core";
-import { DatatableComponent, DatatableOptions } from "@redsen/mat-datatable";
+import { DatatableComponent, DatatableOptions } from "@acheddir/mat-datatable";
 
 @Component({
   selector: "app-users",
@@ -506,11 +496,11 @@ price!: number;
 
 ## Contributing
 
-This library is maintained internally. For bugs or feature requests, please contact the development team.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-MIT License - see LICENSE file for details
+MIT License - see [LICENSE](./LICENSE) file for details
 
 ## Changelog
 
@@ -518,7 +508,11 @@ See [CHANGELOG.md](./CHANGELOG.md) for version history and release notes.
 
 ## Support
 
-For questions or issues, please contact:
+For questions or issues:
 
-- Email: acheddir@outlook.fr
-- Internal Slack: #datatable-support
+- **GitHub Issues**: https://github.com/acheddir/mat-datatable/issues
+- **Email**: acheddir@outlook.fr
+
+## Demo
+
+Check out the [demo application](./apps/demo) for live examples of all features.

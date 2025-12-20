@@ -4,7 +4,7 @@ import {
   DatatableOptions,
   FilterChangeEvent,
   getTableMetadata,
-} from "@redsen/mat-datatable";
+} from "@acheddir/mat-datatable";
 import { MockDataService } from "../../services/mock-data.service";
 import { Product } from "../../models/product.model";
 import { Sort } from "@angular/material/sort";

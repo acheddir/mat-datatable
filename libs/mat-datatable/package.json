@@ -1,5 +1,5 @@
 {
-  "name": "@redsen/mat-datatable",
+  "name": "@acheddir/mat-datatable",
   "version": "1.0.0",
   "description": "Angular 21 Material datatable with pagination, sorting, and column filtering support for both client and server-side data",
   "keywords": [
@@ -13,11 +13,11 @@
     "filtering",
     "data-grid"
   ],
-  "author": "Your Company",
+  "author": "Abderrahman Cheddir",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-org/mat-datatable.git"
+    "url": "https://github.com/acheddir/mat-datatable.git"
   },
   "peerDependencies": {
     "@angular/common": "^21.0.0",

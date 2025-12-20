@@ -1,4 +1,4 @@
-import { Column } from "@redsen/mat-datatable";
+import { Column } from "@acheddir/mat-datatable";
 
 export class User {
   @Column({
