@@ -1,0 +1,47 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc",
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@redsen/mat-datatable": ["./dist/mat-datatable"],
+      "@redsen/mat-datatable/models": ["./libs/mat-datatable/src/lib/models"]
+    },
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "declaration": false,
+    "experimentalDecorators": true,
+    "moduleResolution": "bundler",
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "ES2022",
+    "lib": ["ES2022", "dom"],
+    "useDefineForClassFields": false
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  },
+  "references": [
+    {
+      "path": "./libs/mat-datatable/tsconfig.lib.json"
+    },
+    {
+      "path": "./libs/mat-datatable/tsconfig.spec.json"
+    },
+    {
+      "path": "./apps/demo/tsconfig.app.json"
+    },
+    {
+      "path": "./apps/demo/tsconfig.spec.json"
+    }
+  ]
+}

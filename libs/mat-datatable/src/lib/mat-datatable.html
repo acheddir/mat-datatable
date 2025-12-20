@@ -1,0 +1,171 @@
+@if (columns && columns.length && options) {
+  <div class="mat-elevation-z4 w-full">
+    <div class="table-container">
+      <mat-table
+        [dataSource]="data"
+        matSort
+        (matSortChange)="onSort($event)"
+        [matSortActive]="options.sorting.defaultActive"
+        [matSortDirection]="options.sorting.defaultDirection"
+      >
+        @if (options.actionsTemplate) {
+          <ng-container matColumnDef="actions">
+            <mat-header-cell *matHeaderCellDef>{{ options.actionsTitle }}</mat-header-cell>
+            <mat-cell *matCellDef="let element; let i = index">
+              <ng-container
+                *ngTemplateOutlet="options.actionsTemplate; context: { $implicit: { element, i } }"
+              />
+            </mat-cell>
+          </ng-container>
+        }
+        @if (options.showRowNumber) {
+          <ng-container matColumnDef="rowNumber">
+            <mat-header-cell *matHeaderCellDef> #</mat-header-cell>
+            <mat-cell *matCellDef="let element; let i = index"> {{ i + 1 + currentPage }}</mat-cell>
+          </ng-container>
+        }
+        @for (column of columns; track column) {
+          <ng-container [matColumnDef]="column.key">
+            @if (column.canSort) {
+              <mat-header-cell
+                *matHeaderCellDef
+                [mat-sort-header]="column.sortFields?.[0] ?? column.key"
+              >
+                {{ column.display || column.key }}
+              </mat-header-cell>
+            } @else {
+              <mat-header-cell *matHeaderCellDef>
+                {{ column.display || column.key }}
+              </mat-header-cell>
+            }
+            <mat-cell *matCellDef="let element">
+              @if (column.templateName && templates[column.templateName]) {
+                <ng-container
+                  *ngTemplateOutlet="
+                    templates[column.templateName] ?? null;
+                    context: { $implicit: { column, element } }
+                  "
+                />
+              } @else {
+                @switch (column.propType) {
+                  @case ("Link") {
+                    <a class="text-blue-600 visited:text-purple-600 underline underline-offset-1">{{
+                      element[column.key]
+                    }}</a>
+                  }
+                  @case ("Number") {
+                    @if (element[column.key]) {
+                      <span class="w-full">{{ element[column.key] | number: "1.0" }}</span>
+                    } @else {
+                      <span class="w-full">{{ column.emptyLabel }}</span>
+                    }
+                  }
+                  @case ("Percent") {
+                    @if (element[column.key]) {
+                      <span class="w-full">{{ element[column.key] | percent: "1.2-2" }}</span>
+                    } @else {
+                      <span>{{ column.emptyLabel }}</span>
+                    }
+                  }
+                  @case ("Boolean") {
+                    {{ element[column.key] ? element[column.key] : column.emptyLabel }}
+                  }
+                  @case ("Date") {
+                    <span class="text-nowrap">{{
+                      element[column.key]
+                        ? (element[column.key] | date: "MM/dd/yyyy")
+                        : column.emptyLabel
+                    }}</span>
+                  }
+                  @case ("html") {
+                    <div [innerHTML]="element[column.key]"></div>
+                  }
+                  @default {
+                    <span>{{ element[column.key] ? element[column.key] : column.emptyLabel }}</span>
+                  }
+                }
+              }
+            </mat-cell>
+          </ng-container>
+        }
+
+        <!-- Filter columns -->
+        @if (options.filtering?.enabled) {
+          @if (options.actionsTemplate) {
+            <ng-container matColumnDef="actions-filter">
+              <mat-header-cell *matHeaderCellDef class="filter-cell" />
+            </ng-container>
+          }
+          @if (options.showRowNumber) {
+            <ng-container matColumnDef="rowNumber-filter">
+              <mat-header-cell *matHeaderCellDef class="filter-cell" />
+            </ng-container>
+          }
+          @for (column of columns; track column) {
+            <ng-container [matColumnDef]="column.key + '-filter'">
+              <mat-header-cell *matHeaderCellDef class="filter-cell">
+                @if (column.filter?.enabled) {
+                  <rs-column-filter
+                    [column]="column"
+                    [debounceTime]="options.filtering?.debounceTime ?? 300"
+                    (filterChange)="onFilterChange(column.key, $event)"
+                  />
+                }
+              </mat-header-cell>
+            </ng-container>
+          }
+        }
+
+        <!-- No Data Column -->
+        <ng-container matColumnDef="noData">
+          <mat-cell *matCellDef class="no-data-cell">
+            {{ options.empty || "No data available" }}
+          </mat-cell>
+        </ng-container>
+
+        @if (options.showHeader) {
+          <mat-header-row *matHeaderRowDef="displayedColumns" />
+          @if (options.filtering?.enabled) {
+            <mat-header-row *matHeaderRowDef="filterColumns" class="filter-row" />
+          }
+        }
+
+        <!-- No Data Row - only show when data is empty -->
+        <mat-row *matRowDef="let row; columns: ['noData']; when: isEmptyData" class="no-data-row" />
+
+        <!-- Regular rows - only show when data has items -->
+        @if (options.alternateRowColor) {
+          <mat-row
+            [ngClass]="{
+              'cursor-pointer': options.callBack,
+              'hover:bg-blue-100!': options.callBack,
+            }"
+            *matRowDef="let row; let odd = odd; columns: displayedColumns; when: hasData"
+            [class.striped-row]="odd"
+            (click)="callBack(row)"
+          />
+        } @else {
+          <mat-row
+            [ngClass]="{
+              'cursor-pointer': options.callBack,
+              'hover:bg-blue-100!': options.callBack,
+            }"
+            *matRowDef="let row; columns: displayedColumns; when: hasData"
+            (click)="callBack(row)"
+          />
+        }
+      </mat-table>
+    </div>
+    @if (options.paging?.enabled) {
+      <mat-paginator
+        [length]="dataLength"
+        showFirstLastButtons="true"
+        [pageSize]="this.pageSize"
+        [pageIndex]="this.pageIndex"
+        [pageSizeOptions]="options.paging?.sizeOptions ?? [10, 20, 50, 100]"
+        (page)="onPage($event)"
+        aria-label="Select page"
+      />
+    }
+  </div>
+}
