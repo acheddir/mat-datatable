@@ -43,7 +43,6 @@ Thumbs.db
 
 # pnpm
 .pnpm-debug.log*
-pnpm-lock.yaml
 
 # Testing
 /coverage

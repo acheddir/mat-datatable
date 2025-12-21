@@ -97,7 +97,7 @@ export class ClientSideExampleComponent implements OnInit {
     }));
 
     // Update the column metadata
-    const metadata = getTableMetadata(Product.prototype);
+    const metadata = getTableMetadata(Product.prototype as unknown as Record<symbol, unknown>);
     if (metadata) {
       const categoryColumn = metadata.columns.find((col) => col.key === "category");
       if (categoryColumn?.filter) {
