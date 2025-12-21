@@ -1,6 +1,6 @@
-# @acheddir/mat-datatable
+# Angular Material Datatable
 
-A production-ready Angular 21 Material datatable library with built-in support for pagination, sorting, and column filtering. Works seamlessly with both client-side and server-side data sources.
+A production-ready Angular Material datatable library with built-in support for pagination, sorting, and column filtering. Works seamlessly with both client-side and server-side data sources.
 
 ## Features
 
