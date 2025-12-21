@@ -1,4 +1,4 @@
-# @acheddir/mat-datatable
+# Angular Material Datatable
 
 A production-ready Angular Material datatable library with built-in support for pagination, sorting, and column filtering. Works seamlessly with both client-side and server-side data sources.
 
@@ -54,7 +54,7 @@ npm install @angular/common@^21.0.0 @angular/core@^21.0.0 \
 ### 1. Define Your Model
 
 ```typescript
-import { Column } from "@redsen/mat-datatable";
+import { Column } from "@acheddir/mat-datatable";
 
 export class User {
   @Column({ display: "ID", propType: "Number", order: 1 })
@@ -78,7 +78,7 @@ export class User {
 
 ```typescript
 import { Component } from "@angular/core";
-import { DatatableComponent, DatatableOptions } from "@redsen/mat-datatable";
+import { DatatableComponent, DatatableOptions } from "@acheddir/mat-datatable";
 
 @Component({
   selector: "app-users",
