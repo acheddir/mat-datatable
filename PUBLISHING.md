@@ -169,6 +169,7 @@ Create or edit `.npmrc` in your project root:
 ```
 
 Then install normally:
+
 ```bash
 npm install @acheddir/mat-datatable
 ```
@@ -176,6 +177,7 @@ npm install @acheddir/mat-datatable
 ### One-time Install
 
 Without configuring `.npmrc`:
+
 ```bash
 npm install @acheddir/mat-datatable --registry=https://npm.pkg.github.com
 ```
