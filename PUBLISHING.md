@@ -2,6 +2,16 @@
 
 This guide explains how to publish `@acheddir/mat-datatable` to npm.
 
+## Current Version
+
+**Latest**: v1.0.2 (published to npm)
+
+### Version History
+
+- **v1.0.2** (2025-12-21): Fixed modelClass setter input order dependency
+- **v1.0.1** (2025-12-21): Fixed data setter to prioritize modelClass over instance prototype
+- **v1.0.0** (2025-12-20): Initial release
+
 ## Prerequisites
 
 ### 1. npm Account Setup
@@ -28,12 +38,12 @@ This guide explains how to publish `@acheddir/mat-datatable` to npm.
 5. Value: Paste your npm token
 6. Click **Add secret**
 
-## Publishing to npm
+## Publishing to npm & GitHub Packages
 
 ### Manual Publish via GitHub Actions
 
 1. Go to **Actions** tab in your GitHub repository
-2. Select **Publish to npm** workflow from the left sidebar
+2. Select **Publish Package** workflow from the left sidebar
 3. Click **Run workflow** button
 4. Fill in the options:
    - **Version**: Leave empty to use current version, or specify new version (e.g., `1.0.1`, `1.1.0`)
@@ -51,6 +61,7 @@ The workflow will:
 - ✅ Build the library
 - ✅ Update version (if specified)
 - ✅ Publish to npm with provenance
+- ✅ Publish to GitHub Packages
 - ✅ Create Git tag (if version specified)
 - ✅ Create GitHub Release (if version specified)
 
@@ -109,12 +120,17 @@ npm install @acheddir/mat-datatable@beta
 After publishing:
 
 1. ✅ Verify package on npm: https://www.npmjs.com/package/@acheddir/mat-datatable
-2. ✅ Test installation in a new project:
+2. ✅ Verify package on GitHub Packages: https://github.com/acheddir/mat-datatable/pkgs/npm/mat-datatable
+3. ✅ Test installation from npm:
    ```bash
    npm install @acheddir/mat-datatable
    ```
-3. ✅ Update CHANGELOG.md with release notes
-4. ✅ Announce the release (if needed)
+4. ✅ Test installation from GitHub Packages:
+   ```bash
+   npm install @acheddir/mat-datatable --registry=https://npm.pkg.github.com
+   ```
+5. ✅ Update CHANGELOG.md with release notes
+6. ✅ Announce the release (if needed)
 
 ## Troubleshooting
 
@@ -138,6 +154,33 @@ After publishing:
 
 - Always increment version before publishing
 - Check current version on npm: https://www.npmjs.com/package/@acheddir/mat-datatable
+
+## Installing from GitHub Packages
+
+To install the package from GitHub Packages, users need to configure their npm client:
+
+### Using .npmrc (Recommended)
+
+Create or edit `.npmrc` in your project root:
+
+```
+@acheddir:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
+```
+
+Then install normally:
+```bash
+npm install @acheddir/mat-datatable
+```
+
+### One-time Install
+
+Without configuring `.npmrc`:
+```bash
+npm install @acheddir/mat-datatable --registry=https://npm.pkg.github.com
+```
+
+**Note**: GitHub Packages requires authentication even for public packages. Users need a GitHub Personal Access Token with `read:packages` permission.
 
 ## npm Package Scope
 

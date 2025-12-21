@@ -5,6 +5,36 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2025-12-21
+
+### Fixed
+
+- **Critical**: Fixed modelClass setter input order dependency issue
+  - The modelClass setter now always extracts metadata when set, regardless of data state
+  - Resolves issue where datatable wouldn't render when modelClass was set after data in template
+  - Rebuilds columns immediately if options available
+  - Re-initializes client-side data if already present
+  - Works correctly regardless of input binding order in templates
+
+### Changed
+
+- modelClass setter now processes unconditionally when value is provided
+- Improved initialization flow robustness
+
+## [1.0.1] - 2025-12-21
+
+### Fixed
+
+- **Critical**: Fixed data setter to prioritize modelClass over instance prototype
+  - Allows plain objects from APIs to work without creating class instances
+  - Previously required creating instances with `new Product()` for each item
+  - Now correctly uses modelClass parameter when provided for metadata extraction
+
+### Changed
+
+- Data setter now checks modelClass first before falling back to instance prototype
+- Improved support for plain object arrays from HTTP responses
+
 ## [1.0.0] - 2025-12-20
 
 ### Added
@@ -117,7 +147,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Documentation
 
 - Comprehensive README with:
-  - Installation instructions for Azure Artifacts
+  - Installation instructions from npm
   - Quick start guide
   - Complete API reference
   - Usage examples for both client and server modes
@@ -194,6 +224,8 @@ This is the first production-ready release of `@acheddir/mat-datatable`, providi
 **Installation:**
 
 ```bash
+npm install @acheddir/mat-datatable
+# or
 pnpm add @acheddir/mat-datatable
 ```
 
@@ -202,4 +234,6 @@ See [README.md](./README.md) for detailed installation and usage instructions.
 
 ---
 
+[1.0.2]: https://github.com/acheddir/mat-datatable/releases/tag/v1.0.2
+[1.0.1]: https://github.com/acheddir/mat-datatable/releases/tag/v1.0.1
 [1.0.0]: https://github.com/acheddir/mat-datatable/releases/tag/v1.0.0
