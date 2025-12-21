@@ -105,16 +105,17 @@ export class DatatableComponent<T extends object> implements AfterViewInit {
     if (values) {
       this._data = deepClone(values);
 
-      // Get table metadata from prototype (works even with empty arrays!)
-      if (values.length > 0) {
-        // Read from first instance's prototype
-        this._tableMetadata = getTableMetadata(
-          Object.getPrototypeOf(values[0]) as Record<symbol, unknown>
-        );
-      } else if (this.modelClass !== undefined) {
-        // Read from provided model class prototype
+      // Get table metadata from prototype
+      // Priority: 1) modelClass (if provided), 2) first item's prototype
+      if (this.modelClass !== undefined) {
+        // Prefer modelClass when provided - allows plain objects from APIs
         this._tableMetadata = getTableMetadata(
           this.modelClass.prototype as Record<symbol, unknown>
+        );
+      } else if (values.length > 0) {
+        // Fallback: Read from first instance's prototype (requires class instances)
+        this._tableMetadata = getTableMetadata(
+          Object.getPrototypeOf(values[0]) as Record<symbol, unknown>
         );
       }
 
