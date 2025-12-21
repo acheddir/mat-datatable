@@ -2,8 +2,8 @@
 
 [![CI](https://github.com/acheddir/mat-datatable/actions/workflows/ci.yml/badge.svg)](https://github.com/acheddir/mat-datatable/actions/workflows/ci.yml)
 [![npm](https://badge.fury.io/js/@acheddir%2Fmat-datatable.svg)](https://www.npmjs.com/package/@acheddir/mat-datatable)
-[![downloads](https://img.shields.io/npm/dm/@acheddir/mat-datatable.svg)](https://www.npmjs.com/package/@acheddir/mat-datatable)
 [![Angular](https://img.shields.io/badge/Angular-21.x-red.svg)](https://angular.io/)
+[![downloads](https://img.shields.io/npm/dm/@acheddir/mat-datatable.svg)](https://www.npmjs.com/package/@acheddir/mat-datatable)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A production-ready Angular Material datatable library with built-in support for pagination, sorting, and column filtering. Works seamlessly with both client-side and server-side data sources.
