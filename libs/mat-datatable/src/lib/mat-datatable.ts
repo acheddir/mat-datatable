@@ -68,13 +68,17 @@ export class DatatableComponent<T extends object> implements AfterViewInit {
   @Input()
   public set modelClass(value: (new () => T) | undefined) {
     this._modelClass = value;
-    // If we have an empty data array and now we have a modelClass, extract the table metadata
-    if (value !== undefined && this._data.length === 0 && this._tableMetadata === undefined) {
+    // Extract table metadata from modelClass when provided
+    if (value !== undefined) {
       this._tableMetadata = getTableMetadata(value.prototype as Record<symbol, unknown>);
       // Build columns if we have options
       // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       if (this._options !== undefined) {
         this.buildColumns();
+        // Re-initialize data if we already have data
+        if (this._data.length > 0 && !this._options.serverSide) {
+          this.initializeClientSideData(this._originalData);
+        }
       }
     }
   }
