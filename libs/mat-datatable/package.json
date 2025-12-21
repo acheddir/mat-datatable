@@ -1,6 +1,6 @@
 {
   "name": "@acheddir/mat-datatable",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Angular Material datatable with pagination, sorting, and column filtering support for both client and server-side data",
   "keywords": [
     "angular",
