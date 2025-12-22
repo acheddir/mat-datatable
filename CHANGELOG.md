@@ -5,6 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.3] - 2025-12-21
+
+### Added
+
+- **GitHub Packages Support**: Package now published to both npm and GitHub Packages registries
+  - Automatic publishing to GitHub Packages using `GITHUB_TOKEN`
+  - Dual registry distribution for better availability
+  - GitHub Packages URL: https://github.com/acheddir/mat-datatable/pkgs/npm/mat-datatable
+- **Enhanced Publish Workflow**:
+  - Added version validation and bumping in workflow
+  - Automatic version update in package.json when specified
+  - Improved error messages for common publish failures
+  - Better summary output showing both registry URLs
+- **Documentation Improvements**:
+  - Added status badges to README (CI, npm, Angular version, downloads, license)
+  - Added "Features Roadmap" section showing planned enhancements
+  - Added "Installing from GitHub Packages" guide in PUBLISHING.md
+  - Enhanced release notes with installation instructions for both registries
+
+### Changed
+
+- Publish workflow renamed from "Publish to npm" to "Publish Package"
+- Workflow now commits version bumps before publishing
+- Release body includes installation instructions for both npm and GitHub Packages
+- Summary output enhanced with links to both package registries
+
 ## [1.0.2] - 2025-12-21
 
 ### Fixed
@@ -234,6 +260,7 @@ See [README.md](./README.md) for detailed installation and usage instructions.
 
 ---
 
+[1.0.3]: https://github.com/acheddir/mat-datatable/releases/tag/v1.0.3
 [1.0.2]: https://github.com/acheddir/mat-datatable/releases/tag/v1.0.2
 [1.0.1]: https://github.com/acheddir/mat-datatable/releases/tag/v1.0.1
 [1.0.0]: https://github.com/acheddir/mat-datatable/releases/tag/v1.0.0
