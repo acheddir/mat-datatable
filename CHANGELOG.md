@@ -5,6 +5,35 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.4] - 2025-12-22
+
+### Changed
+
+- **BREAKING**: Component selector changed from `rs-mat-datatable` to `mat-datatable`
+  - Simplified selector following Material Design naming conventions
+  - More intuitive and consistent with Angular Material ecosystem
+  - Easier to remember and type
+
+### Migration Guide
+
+Update your templates to use the new selector:
+
+```html
+<!-- Before (v1.0.3 and earlier) -->
+<rs-mat-datatable [data]="data" [options]="options" [modelClass]="Model" />
+
+<!-- After (v1.0.4+) -->
+<mat-datatable [data]="data" [options]="options" [modelClass]="Model" />
+```
+
+Simple find and replace: `rs-mat-datatable` → `mat-datatable`
+
+### Updated
+
+- ESLint configuration to allow `mat` prefix for component selectors
+- All documentation examples to use new selector
+- Demo applications updated with new selector
+
 ## [1.0.3] - 2025-12-21
 
 ### Added
@@ -260,6 +289,7 @@ See [README.md](./README.md) for detailed installation and usage instructions.
 
 ---
 
+[1.0.4]: https://github.com/acheddir/mat-datatable/releases/tag/v1.0.4
 [1.0.3]: https://github.com/acheddir/mat-datatable/releases/tag/v1.0.3
 [1.0.2]: https://github.com/acheddir/mat-datatable/releases/tag/v1.0.2
 [1.0.1]: https://github.com/acheddir/mat-datatable/releases/tag/v1.0.1

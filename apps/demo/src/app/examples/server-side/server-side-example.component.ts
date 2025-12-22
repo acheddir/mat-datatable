@@ -20,7 +20,7 @@ import { PageEvent } from "@angular/material/paginator";
         Total Users: {{ totalUsers }} | Current Page: {{ currentPage + 1 }}
       </div>
 
-      <rs-mat-datatable
+      <mat-datatable
         [data]="users"
         [options]="datatableOptions"
         [dataLength]="totalUsers"

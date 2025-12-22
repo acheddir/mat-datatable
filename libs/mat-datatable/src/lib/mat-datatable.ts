@@ -29,7 +29,7 @@ import { deepClone, sortBy, orderBy } from "./utils/data-utils";
 import { ColumnFilterComponent } from "./components/column-filter.component";
 
 @Component({
-  selector: "rs-mat-datatable",
+  selector: "mat-datatable",
   imports: [
     MatTable,
     MatSort,

@@ -31,7 +31,7 @@ import { PageEvent } from "@angular/material/paginator";
         }
       </div>
 
-      <rs-mat-datatable
+      <mat-datatable
         [data]="products"
         [options]="datatableOptions"
         [dataLength]="products.length"

@@ -14,7 +14,7 @@ import { Product } from "../../models/product.model";
         Simple datatable with 10 products, sorting enabled, pagination disabled.
       </p>
 
-      <rs-mat-datatable
+      <mat-datatable
         [data]="products"
         [modelClass]="Product"
         [options]="datatableOptions"

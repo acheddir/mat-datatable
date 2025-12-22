@@ -94,7 +94,7 @@ import { DatatableComponent, DatatableOptions } from "@acheddir/mat-datatable";
   standalone: true,
   imports: [DatatableComponent],
   template: `
-    <rs-mat-datatable [data]="users" [options]="tableOptions" [modelClass]="userModelClass" />
+    <mat-datatable [data]="users" [options]="tableOptions" [modelClass]="userModelClass" />
   `,
 })
 export class UsersComponent {
@@ -221,7 +221,7 @@ Process all data operations (filtering, sorting, pagination) in the browser.
 @Component({
   selector: 'app-client-side-table',
   template: `
-    <rs-mat-datatable
+    <mat-datatable
       [data]="products"
       [options]="options"
       [modelClass]="productClass"
@@ -258,7 +258,7 @@ Delegate data operations to your backend API.
 @Component({
   selector: "app-server-side-table",
   template: `
-    <rs-mat-datatable
+    <mat-datatable
       [data]="products"
       [dataLength]="totalCount"
       [loading]="loading"
@@ -346,11 +346,7 @@ Add custom rendering for specific columns.
       </button>
     </ng-template>
 
-    <rs-mat-datatable
-      [data]="users"
-      [options]="options"
-      [templates]="{ actions: actionsTemplate }"
-    />
+    <mat-datatable [data]="users" [options]="options" [templates]="{ actions: actionsTemplate }" />
   `,
 })
 export class CustomTemplateComponent {
