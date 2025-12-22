@@ -21,6 +21,19 @@ A production-ready Angular Material datatable library with built-in support for 
 - ✅ **Accessibility**: Built on Angular Material for WCAG compliance
 - ✅ **Production Ready**: 75+ unit tests, strict linting, and 51% code coverage
 
+## Features Roadmap
+
+- Row selection (single/multi)
+- Column reordering (drag & drop)
+- Column visibility toggle
+- Export to CSV/Excel
+- Inline editing
+- Row expansion (master-detail)
+- Virtual scrolling for large datasets
+- Saved user preferences
+- Global search across all columns
+- Advanced filters (date ranges, multi-select)
+
 ## Installation
 
 ### From npm
