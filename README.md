@@ -519,11 +519,11 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-MIT License - see [LICENSE](./LICENSE) file for details
+MIT License - see [LICENSE](https://github.com/acheddir/mat-datatable/blob/main/LICENSE) file for details
 
 ## Changelog
 
-See [CHANGELOG.md](./CHANGELOG.md) for version history and release notes.
+See [CHANGELOG.md](https://github.com/acheddir/mat-datatable/blob/main/CHANGELOG.md) for version history and release notes.
 
 ## Support
 
@@ -534,4 +534,4 @@ For questions or issues:
 
 ## Demo
 
-Check out the [demo application](./apps/demo) for live examples of all features.
+Check out the [demo application](https://github.com/acheddir/mat-datatable/tree/main/apps/demo) for examples of all features.
