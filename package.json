@@ -9,7 +9,7 @@
     "build": "pnpm build:lib && pnpm build:demo",
     "build:lib": "ng build mat-datatable",
     "build:demo": "ng build demo",
-    "test": "ng test mat-datatable",
+    "test": "ng test mat-datatable --watch=false",
     "test:watch": "ng test mat-datatable --watch",
     "test:lib": "ng test mat-datatable",
     "test:coverage": "ng test mat-datatable --coverage",
@@ -18,7 +18,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "check": "pnpm lint && pnpm format:check && pnpm test",
-    "pack:lib": "cd dist/mat-datatable && npm pack"
+    "pack:lib": "cd dist/mat-datatable && npm pack",
+    "prepare": "husky"
   },
   "engines": {
     "node": ">=20.0.0",
@@ -44,6 +45,7 @@
     "@vitest/ui": "^4.0.16",
     "angular-eslint": "^21.1.0",
     "eslint": "^9.39.2",
+    "husky": "^9.1.7",
     "jsdom": "^27.3.0",
     "ng-packagr": "^21.0.1",
     "prettier": "^3.4.2",
