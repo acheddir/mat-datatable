@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.5] - 2025-12-23
+
+### Added
+
+- **Pre-commit Hook**: Added Husky pre-commit hook for automated code quality checks
+  - Runs linting and formatting checks before commits
+  - Ensures code quality standards are maintained
+
+### Changed
+
+- **Enhanced Publish Workflow**: Improved npm publish workflow with better version management
+  - Enhanced version bump and publish checks
+  - More robust version validation
+  - Improved error handling and workflow reliability
+- **Documentation**: Updated README badges
+  - Replaced badge.fury.io npm badge with shields.io for consistency
+  - Better visual consistency across all badges
+
 ## [1.0.4] - 2025-12-22
 
 ### Changed
@@ -289,6 +307,7 @@ See [README.md](./README.md) for detailed installation and usage instructions.
 
 ---
 
+[1.0.5]: https://github.com/acheddir/mat-datatable/releases/tag/v1.0.5
 [1.0.4]: https://github.com/acheddir/mat-datatable/releases/tag/v1.0.4
 [1.0.3]: https://github.com/acheddir/mat-datatable/releases/tag/v1.0.3
 [1.0.2]: https://github.com/acheddir/mat-datatable/releases/tag/v1.0.2
