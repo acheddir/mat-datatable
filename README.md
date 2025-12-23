@@ -1,7 +1,7 @@
 # Angular Material Datatable
 
 [![CI](https://github.com/acheddir/mat-datatable/actions/workflows/ci.yml/badge.svg)](https://github.com/acheddir/mat-datatable/actions/workflows/ci.yml)
-[![npm](https://badge.fury.io/js/@acheddir%2Fmat-datatable.svg?refresh=1)](https://www.npmjs.com/package/@acheddir/mat-datatable)
+[![npm](https://img.shields.io/npm/v/@acheddir/mat-datatable)](https://www.npmjs.com/package/@acheddir/mat-datatable)
 [![Angular](https://img.shields.io/badge/Angular-21.x-red.svg)](https://angular.io/)
 [![downloads](https://img.shields.io/npm/dm/@acheddir/mat-datatable.svg)](https://www.npmjs.com/package/@acheddir/mat-datatable)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
