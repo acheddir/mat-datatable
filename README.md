@@ -33,6 +33,7 @@ A production-ready Angular Material datatable library with built-in support for 
 - Saved user preferences
 - Global search across all columns
 - Advanced filters (date ranges, multi-select)
+- i18n support
 
 ## Installation
 
