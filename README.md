@@ -8,6 +8,8 @@
 
 A production-ready Angular Material datatable library with built-in support for pagination, sorting, and column filtering. Works seamlessly with both client-side and server-side data sources.
 
+![](https://www.acheddir.com/mat-datatable.png)
+
 ## Features
 
 - ✅ **Dual-Mode Data Handling**: Client-side and server-side data processing
